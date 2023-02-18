@@ -1,0 +1,7 @@
+# find_package(GTest REQUIRED)
+
+aux_source_directory(. DIR_TEST)
+
+add_executable(TestYAInfer ${DIR_TEST})
+
+target_link_libraries(TestYAInfer gtest glog pthread armadillo blas lapack)
