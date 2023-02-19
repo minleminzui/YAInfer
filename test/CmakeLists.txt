@@ -1,7 +1,10 @@
 # find_package(GTest REQUIRED)
 
 aux_source_directory(. DIR_TEST)
+aux_source_directory(../source/data DIR_DATA)
 
-add_executable(TestYAInfer ${DIR_TEST})
+set(link_lib glog gtest pthread)
+set(link_math_lib armadillo blas lapack)
+add_executable(TestYAInfer ${DIR_TEST} ${DIR_DATA})
 
-target_link_libraries(TestYAInfer gtest glog pthread armadillo blas lapack)
+target_link_libraries(TestYAInfer ${link_lib} ${link_math_lib})
