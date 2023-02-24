@@ -81,6 +81,13 @@ class Tensor<float> {
   float index(uint32_t offset) const;
 
   /**
+   * @description: return the element of the position by the offset
+   * @param {uint32_t} offset
+   * @return the element of the position by the offset
+   */
+  float &index(uint32_t offset);
+
+  /**
    * @description: return the shape of this tensor
    * @return shape
    */

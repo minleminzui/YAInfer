@@ -12,3 +12,5 @@ Yet another deep learning inference framework
 - [.clang-format](https://www.cnblogs.com/__tudou__/p/13322854.html)
     - ```/home/yitong/.vscode-server/extensions/ms-vscode.cpptools-1.14.3-linux-x64/bin/../LLVM/bin/clang-format```
 - [cmake tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
+- [pooling](https://zhuanlan.zhihu.com/p/78760534)
+- [Relu](https://zhuanlan.zhihu.com/p/68791636)
