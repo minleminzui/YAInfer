@@ -228,4 +228,7 @@ void Tensor<float>::Ones() {
   this->data_.fill(1.);
 }
 
+std::shared_ptr<Tensor<float>> Tensor<float>::Clone() {
+  return std::make_shared<Tensor<float>>(*this);
+}
 }  // namespace YAInfer

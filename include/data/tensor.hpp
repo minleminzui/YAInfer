@@ -186,6 +186,12 @@ class Tensor<float> {
    */
   void Flatten();
 
+  /**
+   * @description: return a deep-copy of the tensor
+   * @return the new tensor
+   */
+  std::shared_ptr<Tensor> Clone();
+
  private:
   std::vector<uint32_t> raw_shapes_;  // the specific dimension of the tensor
   arma::fcube data_;                  // the data of the tensor

@@ -14,7 +14,9 @@ namespace YAInfer {
 ReluLayer::ReluLayer(const std::shared_ptr<Operator> &op) : Layer("Relu") {
   CHECK(op->op_type_ == OpType::kOperatorRelu)
       << "Operator has a wrong type: " << int(op->op_type_);
-  // use dynamic_cast to check the type of Operator
+  // why we use `const std::shared_ptr<Operator>`, instead of `const
+  // std::shared_ptr<ReluOperator>`? To unify the interface of the factory
+  // method use dynamic_cast to check the type of Operator
   ReluOperator *relu_op = dynamic_cast<ReluOperator *>(op.get());
 
   CHECK(relu_op != nullptr) << "Relu operator is empty";
@@ -35,9 +37,9 @@ void ReluLayer::Forwards(
     CHECK(!inputs.at(i)->empty());
     const std::shared_ptr<Tensor<float>> &input_data =
         inputs.at(i);  // get a tensor from the batch
-
+    std::shared_ptr<Tensor<float>> output_data = input_data->Clone();
     // fcube.transform
-    input_data->data().transform([&](float value) {
+    output_data->data().transform([&](float value) {
       if (value >= this->op_->get_thresh()) {
         return value;
       } else {
@@ -45,7 +47,7 @@ void ReluLayer::Forwards(
       }
     });
 
-    outputs.push_back(input_data);
+    outputs.push_back(output_data);
   }
 }
 
