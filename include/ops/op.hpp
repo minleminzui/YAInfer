@@ -8,6 +8,7 @@ enum class OpType {
   kOperatorUnknown = -1,
   kOperatorRelu = 0,
   kOperatorSigmoid = 1,
+  kOperatorMaxPooling = 2,
 };
 
 class Operator {
