@@ -14,3 +14,7 @@ Yet another deep learning inference framework
 - [cmake tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
 - [pooling](https://zhuanlan.zhihu.com/p/78760534)
 - [Relu](https://zhuanlan.zhihu.com/p/68791636)
+- [TensorRT](https://zhuanlan.zhihu.com/p/35657027)
+- [ONNX&&Torchscript](https://blog.csdn.net/deephub/article/details/113735324)
+- [pytorch_JIT&&TorchScript](https://blog.csdn.net/MumuziD/article/details/113280207)
+- [why_deep_not_wide](https://aistudio.baidu.com/aistudio/education/group/info/2059)
